@@ -5,9 +5,9 @@ export default function GoblinForm(props) {
     e.preventDefault();
 
     props.submitGoblin();
-    props.setGoblinFormName();
-    props.setGoblinFormHP();
-    props.setGoblinFromColor();
+    props.setGoblinFormName('');
+    props.setGoblinFormHP('');
+    props.setGoblinFormColor('');
   }
   return (
     <div className='goblin-form-container quarter'>
