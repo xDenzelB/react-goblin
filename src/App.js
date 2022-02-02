@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const [currentFilter, setFilter] = useState('');
-  const [allGoblin, setAllGoblin] = useState([]);
+  const [allGoblins, setAllGoblins] = useState([]);
   const [filteredGoblins, setFilteredGoblins] = useState([]);
   /* 
     track: 
@@ -27,7 +27,14 @@ function App() {
     e.preventDefault();
     
     // on submit, make a new goblin object with a random id, a name that comes from the form state, an hp that comes from the form state, and a color that comes from the form state
+    const newGoblin = {
+      id: Math.ceil(Math.random() * 99999),
+      name: goblinFormName,
+      hp: goblinFormHP,
+      color: goblinFormColor
+    };
 
+    setAllGoblins([...allGoblins, newGoblin]);
     // update the allGoblins array. Add the new goblin to the allGoblins array immutably.
     
     // clear out the goblin form state items by setting them to empty strings. This will cause the form to reset in the UI.
