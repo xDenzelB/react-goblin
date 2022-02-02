@@ -2,8 +2,13 @@ import './App.css';
 import GoblinForm from './GoblinForm';
 import GoblinList from './GoblinList';
 import Goblin from './Goblin';
+import { useGoblinForm } from './useGoblinForm';
+import { useState } from 'react';
 
 function App() {
+  const [currentFilter, setFilter] = useState('');
+  const [goblin, setGoblin] = useState([]);
+  const [filteredGoblins, setFilteredGoblins] = useState([]);
   /* 
     track: 
       allGoblins, an array of all goblins
@@ -12,9 +17,14 @@ function App() {
       goblinFormHP, which is how we track the user input for the current HP of the goblin in the form
       goblinFormColor, which is how we track the user input for the current color of the goblin in the form
 */
+  const {
+    goblinFormName, setGoblinFormName,
+    goblinFormHP, setGoblinFormHP,
+    goblinFormColor, setGoblinFormColor,
+  } = useGoblinForm();
   
   function submitGoblin(e) {
-    e.preventDefault()
+    e.preventDefault();
     
     // on submit, make a new goblin object with a random id, a name that comes from the form state, an hp that comes from the form state, and a color that comes from the form state
 
