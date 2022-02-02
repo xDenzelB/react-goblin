@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const [currentFilter, setFilter] = useState('');
-  const [goblin, setGoblin] = useState([]);
+  const [allGoblin, setAllGoblin] = useState([]);
   const [filteredGoblins, setFilteredGoblins] = useState([]);
   /* 
     track: 
