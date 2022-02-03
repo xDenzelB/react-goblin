@@ -65,6 +65,9 @@ function App() {
     <div className="App">
       <div className='current-goblin quarter'>
         <Goblin goblin={{
+          name: goblinFormName,
+          hp: goblinFormHP,
+          color: goblinFormColor
           /* 
             use the goblin form state to make a goblin object and to display it. 
             This will let the user see the current form state 
